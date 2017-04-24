@@ -1,0 +1,33 @@
+{
+  "name": "ms-03-group-project-zoo-api-westley-js",
+  "version": "1.0.0",
+  "description": "Creating an API for an existing Angular app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nss-day-cohort-17/ms-03-group-project-zoo-api-westley-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nss-day-cohort-17/ms-03-group-project-zoo-api-westley-js/issues"
+  },
+  "homepage": "https://github.com/nss-day-cohort-17/ms-03-group-project-zoo-api-westley-js#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "bookshelf": "^0.10.3",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.2",
+    "knex": "^0.12.9",
+    "pg": "^6.1.5"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.3.0"
+  }
+}
