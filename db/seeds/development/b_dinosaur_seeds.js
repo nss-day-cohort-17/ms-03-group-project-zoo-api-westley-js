@@ -25,7 +25,7 @@ exports.seed = function(knex, Promise) {
           species: 'Velociraptor',
           age: '71 million years',
           gender: 'male',
-          category_id: 2,
+          category_id: 4,
           number_of_kills: 2147483647,
           animal_image: 'http://vignette2.wikia.nocookie.net/jurassicpark/images/1/12/Velociraptor-detail-header.png/revision/latest?cb=20150420213742'
         }),
@@ -34,7 +34,7 @@ exports.seed = function(knex, Promise) {
           species: 'Mochlodon',
           age: '80 million years',
           gender: 'female',
-          category_id: 2,
+          category_id: 3,
           number_of_kills: 30,
           animal_image: 'http://vignette3.wikia.nocookie.net/dinosaurs/images/e/eb/Mochlodon.jpg/revision/latest?cb=20140117180010'
         }),
@@ -43,7 +43,7 @@ exports.seed = function(knex, Promise) {
           species: 'Pisanosaurus',
           age: '228 million years',
           gender: 'female',
-          category_id: 2,
+          category_id: 3,
           number_of_kills: 59,
           animal_image: 'http://vignette1.wikia.nocookie.net/dinosaurs/images/b/b9/Pisanosaurus.jpg/revision/latest?cb=20130630185600'
         }),
@@ -52,7 +52,7 @@ exports.seed = function(knex, Promise) {
           species: 'Bravoceratops',
           age: '75 million years',
           gender: 'male',
-          category_id: 2,
+          category_id: 6,
           number_of_kills: 75000,
           animal_image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Bravoceratops.jpg/1920px-Bravoceratops.jpg'
         }),
@@ -61,7 +61,7 @@ exports.seed = function(knex, Promise) {
           species: 'Tyrannosaurus',
           age: '68 million years',
           gender: 'male',
-          category_id: 1,
+          category_id: 4,
           number_of_kills: 200000,
           animal_image: 'http://islanublar.jurassicworld.com/media/dinosaurs/tyrannosaurus-rex/tyrannosaurus-rex-info-graphic.png'
         }),
@@ -70,7 +70,7 @@ exports.seed = function(knex, Promise) {
           species: 'Brachiosaurus',
           age: '150 million years',
           gender: 'male',
-          category_id: 1,
+          category_id: 5,
           number_of_kills: 25,
           animal_image: 'https://www.newdinosaurs.com/wp-content/uploads/2016/01/40_brachiosaurus_nobu_tamura.jpg'
         })
