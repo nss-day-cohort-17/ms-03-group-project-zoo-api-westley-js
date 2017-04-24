@@ -1,5 +1,5 @@
 exports.up = function(knex, Promise) {
- knex.schema.table('animals', function(table){
+ return knex.schema.table('animals', function(table){
    table.string('name').notNullable();
    table.string('species').notNullable();
    table.string('age').notNullable();
@@ -11,5 +11,5 @@ exports.up = function(knex, Promise) {
  };
 
 exports.down = function(knex, Promise) {
-  knex.schema.dropTableIfExists('animals');
+  return knex.schema.dropTableIfExists('animals');
 };
