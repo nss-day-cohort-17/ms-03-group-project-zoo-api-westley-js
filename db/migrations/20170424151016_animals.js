@@ -4,7 +4,7 @@ exports.up = function(knex, Promise) {
    table.string('species').notNullable();
    table.string('age').notNullable();
    table.string('gender').notNullable();
-   table.integer('category_id').notNullable().unsigned().references('directors.id');
+   table.integer('category_id').notNullable().unsigned().references('categories.id');
    table.integer('number_of_kills').notNullable();
    table.string('animal_image').notNullable();
    })
