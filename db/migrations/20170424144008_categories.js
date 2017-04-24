@@ -1,7 +1,7 @@
 
 exports.up = function(knex, Promise) {
-  knex.schema.alterTable('categories', function(table){
-    table.string('name').notNullable().alter();
+  knex.schema.table('categories', function(table){
+    table.string('name').notNullable();
   })
 };
 
