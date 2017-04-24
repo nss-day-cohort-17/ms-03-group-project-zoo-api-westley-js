@@ -9,3 +9,7 @@ exports.up = function(knex, Promise) {
    table.string('animal_image').notNullable();
    })
  };
+
+exports.down = function(knex, Promise) {
+  knex.schema.dropTableIfExists('animals');
+};
