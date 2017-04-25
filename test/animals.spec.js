@@ -8,15 +8,15 @@ const { knex } = require('../db/database')
 chai.use(chaiHttp)
 
 describe('Animal routes', () => {
-  // beforeEach( () => {
-  //   return knex.migrate.rollback()
-  //     .then( () => {
-  //       return knex.migrate.latest()
-  //     })
-  //     .then( () => {
-  //       return knex.seed.run()
-  //     })
-  // })
+  beforeEach( () => {
+    return knex.migrate.rollback()
+      .then( () => {
+        return knex.migrate.latest()
+      })
+      .then( () => {
+        return knex.seed.run()
+      })
+  })
 
   describe('Get all animals', () => {
     it('should get all the animals', () => {
