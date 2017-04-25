@@ -14,6 +14,16 @@ const Animal = bookshelf.Model.extend({
     .catch( (err) => {
       return err
     })
+  },
+  getOneAnimal: function(id) {
+    return this.forge({id})
+    .fetch()
+    .then( (animal) => {
+      return animal
+    })
+    .catch( (err) => {
+      return err
+    })
   }
 })
 
