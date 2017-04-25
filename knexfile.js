@@ -5,7 +5,7 @@ module.exports = {
   test: {
     client: 'postgresql',
     connection: {
-      database: 'dino_zoo'
+      database: 'dino_zoo_test'
     },
     migrations: {
       directory: __dirname + '/db/migrations'
