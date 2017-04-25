@@ -1,12 +1,14 @@
 'use strict';
 
 const { bookshelf } = require('../db/database');
+require('./keeperModel');
+require('./animal_keeperModel');
 
 const Animal = bookshelf.Model.extend({
-  tableName: 'animals'
+  tableName: 'animals',
+  keeper: function() { return this.belongsToMany('Keeper').through('Animal_Keeper')}
 }, {
   getAll: function() {
-    console.log('getting all the dinos')
     return this.forge()
     .fetchAll()
     .then( (rows) => {
@@ -15,7 +17,18 @@ const Animal = bookshelf.Model.extend({
     .catch( (err) => {
       return err
     })
-  }
-})
+  },
+  getOneAnimal: function(id) {
+    return this.forge({id})
+    .fetch()
+    .then( (animal) => {
+      return animal
+    })
+    .catch( (err) => {
+      return err
+    })
+  },
+  dependents: ['keeper']
+});
 
-module.exports = bookshelf.model('Animal', Animal)
+module.exports = bookshelf.model('Animal', Animal);

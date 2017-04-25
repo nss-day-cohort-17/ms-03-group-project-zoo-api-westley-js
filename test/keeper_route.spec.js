@@ -7,7 +7,6 @@ const server = require('../app');
 const { knex } = require('../db/database');
 chai.use(chaiHttp);
 
-
 describe('Show keeper routes', () => {
 
   beforeEach( () => {
@@ -110,3 +109,4 @@ describe('Show keeper routes', () => {
   });
 
 });
+
