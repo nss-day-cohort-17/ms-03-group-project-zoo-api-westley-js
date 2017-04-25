@@ -1,9 +1,12 @@
 'use strict';
 
 const { bookshelf } = require('../db/database');
+require('./keeperModel');
+require('./animal_keeperModel');
 
 const Animal = bookshelf.Model.extend({
-  tableName: 'animals'
+  tableName: 'animals',
+  keeper: function() { return this.belongsToMany('Keeper').through('Animal_Keeper')}
 }, {
   getAll: function() {
     return this.forge()
