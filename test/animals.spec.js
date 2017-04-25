@@ -91,4 +91,30 @@ describe('Animal routes', () => {
     })
   })
 
+  describe('DELETE one animal', () => {
+    it('should delete an animal from the database', () => {
+      return chai.request(server)
+      .delete('/api/v1/animals/1')
+      .then( (res) => {
+        res.should.have.status(202)
+        res.should.be.json
+        res.should.be.a('object')
+        chai.request(server)
+        .get('/api/v1/animals/1')
+        .then( (res) => {
+          res.should.be.json
+          res.should.have.status(200)
+          res.body.should.be.a('object')
+          res.body.should.have.property('name')
+          res.body.should.have.property('species')
+          res.body.should.have.property('age')
+          res.body.should.have.property('gender')
+          res.body.should.have.property('category_id')
+          res.body.should.have.property('number_of_kills')
+          res.body.should.have.property('animal_image')
+        })        
+      })
+    })
+  })
+
 })
