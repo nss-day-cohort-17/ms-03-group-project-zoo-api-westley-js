@@ -7,11 +7,11 @@ const Keeper = bookshelf.Model.extend({
 }, {
 
   getAll: function () {
-    console.log('Get all called from Keeper model')
+    // console.log('Get all called from Keeper model')
     return this.forge()
     .fetchAll()
     .then( (rows) => {
-      console.log("the rows", rows.toJSON())
+      // console.log("the rows", rows.toJSON())
       return rows
     })
     .catch( (error) => {
