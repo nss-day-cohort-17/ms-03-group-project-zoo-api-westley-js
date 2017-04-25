@@ -42,6 +42,33 @@ describe('Animal routes', () => {
         res.body[0].animal_image.should.equal('http://vignette2.wikia.nocookie.net/dino/images/5/52/Paluxysaurus.jpg/revision/latest?cb=20110816080846')
       })
     })
+
+  describe('GET one animal', () => {
+    it('should get one animal', () => {
+      return chai.request(server)
+      .get('/api/v1/animals/1')
+      .then( (res) => {
+        res.should.be.json
+        res.should.have.status(200)
+        res.body.should.be.a('object')
+        res.body.should.have.property('name')
+        res.body.should.have.property('species')
+        res.body.should.have.property('age')
+        res.body.should.have.property('gender')
+        res.body.should.have.property('category_id')
+        res.body.should.have.property('number_of_kills')
+        res.body.should.have.property('animal_image')
+        res.body.name.should.equal('James')
+        res.body.species.should.equal('Paluxysaurus')
+        res.body.age.should.equal('110 million years')
+        res.body.gender.should.equal('male')
+        res.body.category_id.should.equal(1)
+        res.body.number_of_kills.should.equal(1000)
+        res.body.animal_image.should.equal('http://vignette2.wikia.nocookie.net/dino/images/5/52/Paluxysaurus.jpg/revision/latest?cb=20110816080846')
+      })
+    })
+  })
+
   })
 
 
