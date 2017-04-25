@@ -35,3 +35,14 @@ module.exports.addAnimal = ({body}, res, next) => {
     next(err)
   })
 }
+
+module.exports.deleteAnimal = ({params: {id}}, res, next) => {
+  Animal.forge({id})
+  .destroy()
+  .then( (animal) => {
+    res.status(202).json(animal)
+  })
+  .catch( (err) => {
+    next(err)
+  })
+};
