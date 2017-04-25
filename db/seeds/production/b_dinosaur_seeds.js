@@ -7,7 +7,7 @@ exports.seed = function(knex, Promise) {
           species: 'Paluxysaurus',
           age: '110 million years',
           gender: 'male',
-          category_id: 1
+          category_id: 1,
           number_of_kills: 1000,
           animal_image: 'http://vignette2.wikia.nocookie.net/dino/images/5/52/Paluxysaurus.jpg/revision/latest?cb=20110816080846'
         }),
@@ -16,7 +16,7 @@ exports.seed = function(knex, Promise) {
           species: 'Aletopelta',
           age: '75.5 million years',
           gender: 'male',
-          category_id: 2
+          category_id: 2,
           number_of_kills: 999,
           animal_image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Aletopelta_coombsi.jpg/2880px-Aletopelta_coombsi.jpg'
         }),
