@@ -2,6 +2,7 @@
 
 const { bookshelf } = require('../db/database');
 const Animal = require('../models/animalModel.js');
+const Animal_Keeper = require('../models/animal_keeperModel');
 
 
 module.exports.getAnimals = (req, res, next) => {
