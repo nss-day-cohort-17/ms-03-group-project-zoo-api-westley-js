@@ -70,7 +70,25 @@ describe('Animal routes', () => {
     })
   })
 
+  describe('POST one animal', () => {
+    it('should add a new animal to the db', () => {
+      return chai.request(server)
+      .post('/api/v1/animals/new')
+      .send({
+        name: 'Lucas',
+        species: 'Dilophosaurus',
+        age: '193 million years',
+        gender: 'male',
+        category_id: 1,
+        number_of_kills: 200,
+        animal_image: 'http://vignette1.wikia.nocookie.net/jurassicpark/images/4/47/Jurasisc-world-lights-sounds-figure-dilophosaurus.jpg/revision/latest?cb=20150213175505'
+      })
+      .then( (res) => {
+        res.should.have.status(201)
+        res.should.be.json
+        res.should.be.a('object')
+      })
+    })
   })
-
 
 })
