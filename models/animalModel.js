@@ -6,7 +6,6 @@ const Animal = bookshelf.Model.extend({
   tableName: 'animals'
 }, {
   getAll: function() {
-    console.log('getting all the dinos')
     return this.forge()
     .fetchAll()
     .then( (rows) => {
