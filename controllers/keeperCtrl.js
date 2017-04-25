@@ -37,15 +37,26 @@ module.exports.addKeeper = ({body}, res, next) => {
   })
 };
 
+// Must delete from animal-keeper pivot table first for a succesful delete
 
 module.exports.deleteKeeper = ({params: {id}}, res, next) => {
   console.log("deleteKeeper function ran. id: ", id)
   Keeper.forge({id})
   .destroy()
   .then( (keeper) => {
-    res.status(202).json(keeper)
+    res.status(202).json(keeper);
   })
   .catch( (error) => {
-    next(error)
+    next(error);
   });
+};
+
+
+module.exports.updateKeeper = ({params, body}, res, next) => {
+  Keeper.forge({id: params.id})
+  .save(body, {patch: true})
+  .then( () => res.status(200).json("msg: Keeper has been updated"))
+  .catch( (error) => {
+    next(error);
+  })
 };

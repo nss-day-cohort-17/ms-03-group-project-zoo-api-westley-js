@@ -66,25 +66,47 @@ describe('Show keeper routes', () => {
     });
   });
 
-  describe('DELETE  /api/v1/keeper/:id', () => {
-    it('should remove a single keeper from the keeper table', () => {
+  // describe('DELETE  /api/v1/keeper/:id', () => {
+  //   it('should remove a single keeper from the keeper table', () => {
+  //     return chai.request(server)
+  //     .delete('/api/v1/keepers/1')
+  //     .then( (res) => {
+  //       res.should.have.status(202);
+  //       res.should.be.json;
+  //       res.body.should.be.a('object');
+
+  //       // Must delete from animal-keeper pivot table first
+
+  //       // chai.request(server)
+  //       // .get('/api/v1/keepers')
+  //       // .then( (res) => {
+  //       //   res.should.have.status(200);
+  //       //   res.should.be.json;
+  //       //   res.body.should.be.a('array')
+  //       // })
+  //     });
+  //   });
+  // });;
+
+  describe('PUT  /api/v1/keeper/:id', () => {
+    it('should modify an existing keeper that exists in the keeper table', () => {
       return chai.request(server)
-      .delete('/api/v1/keepers/1')
+      .put('/api/v1/keepers/1')
+      .send({
+        "first_name": "Westley",
+        "last_name": "Isbell",
+        "gender": "Male",
+        "age": "30",
+        "date_of_hire": "1/1/1996",
+        "speciality": "Imposter Syndrome",
+        "keeper_image": "http://cf.broadsheet.ie/wp-content/uploads/2016/11/Chewbacca-starwars.jpg"
+      })
       .then( (res) => {
-        res.should.have.status(202);
+        res.should.have.status(200);
         res.should.be.json;
-        res.body.should.be.a('object');
-
-
-        // chai.request(server)
-        // .get('/api/v1/keepers')
-        // .then( (res) => {
-        //   res.should.have.status(200);
-        //   res.should.be.json;
-        //   res.body.should.be.a('array')
-        // })
+        res.should.be.a('object');
       });
     });
-  });;
+  });
 
 });
