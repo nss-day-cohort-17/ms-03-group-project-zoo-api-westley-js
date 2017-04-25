@@ -2,7 +2,7 @@
 
 const keepers = require('../../../data/keepers');
 
-console.log('keepers', keepers);
+// console.log('keepers', keepers);
 
 exports.seed = function(knex, Promise) {
 

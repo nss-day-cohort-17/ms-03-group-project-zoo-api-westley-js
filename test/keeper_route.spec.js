@@ -16,8 +16,18 @@ describe('Show keeper routes', () => {
       return knex.migrate.latest()
     })
     .then( () => {
-      return knex.seen.run()
-    })
-  })
+      return knex.seed.run()
+    });
+  });
+
+  describe('Get all keepers', () => {
+    it('should get all keepers', () => {
+      return chai.request(server)
+      .get('/api/v1/keepers')
+      .then( (res) => {
+        res.should.have.status(200);
+      });
+    });
+  });
 
 })
