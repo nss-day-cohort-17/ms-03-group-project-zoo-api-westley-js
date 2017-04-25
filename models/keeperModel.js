@@ -19,6 +19,18 @@ const Keeper = bookshelf.Model.extend({
     .catch( (error) => {
       return error
     });
+  },
+
+  getSingleKeeper: function (id) {
+    console.log('Get single keeper called from Keeper modle')
+    return this.forge({id})
+    .fetch()
+    .then( (keeper) => {
+      return keeper;
+    })
+    .catch( (error) => {
+      return error;
+    });
   }
 
 });
