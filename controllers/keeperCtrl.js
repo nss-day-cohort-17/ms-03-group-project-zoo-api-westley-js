@@ -26,3 +26,13 @@ module.exports.getKeeper = ({params: {id}}, res, next) => {
     next(error);
   })
 };
+
+
+module.exports.addKeeper = ({body}, res, next) => {
+  Keeper.forge(body)
+  .save()
+  .then( () => res.status(201).json("msg: New keeper successfully added"))
+  .catch( (error) => {
+    next(error);
+  })
+};

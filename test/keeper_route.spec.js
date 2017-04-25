@@ -48,7 +48,7 @@ describe('Show keeper routes', () => {
   describe('POST  /api/v1/keeper/new', () => {
     it('should add a new keeper to the keeper table', () => {
       return chai.request(server)
-      .post('api/v1/keepers/new')
+      .post('/api/v1/keepers/new')
       .send({
         "first_name": "Westley",
         "last_name": "Isbell",
@@ -62,9 +62,9 @@ describe('Show keeper routes', () => {
         res.should.have.status(201)
         res.should.be.json
         res.should.be.a('object')
-      })
-    })
-  })
+      });
+    });
+  });
 
 
 });
