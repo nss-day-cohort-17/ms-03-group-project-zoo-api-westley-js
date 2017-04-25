@@ -66,5 +66,25 @@ describe('Show keeper routes', () => {
     });
   });
 
+  describe('DELETE  /api/v1/keeper/:id', () => {
+    it('should remove a single keeper from the keeper table', () => {
+      return chai.request(server)
+      .delete('/api/v1/keepers/1')
+      .then( (res) => {
+        res.should.have.status(202);
+        res.should.be.json;
+        res.body.should.be.a('object');
+
+
+        // chai.request(server)
+        // .get('/api/v1/keepers')
+        // .then( (res) => {
+        //   res.should.have.status(200);
+        //   res.should.be.json;
+        //   res.body.should.be.a('array')
+        // })
+      });
+    });
+  });;
 
 });

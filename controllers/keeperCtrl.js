@@ -36,3 +36,16 @@ module.exports.addKeeper = ({body}, res, next) => {
     next(error);
   })
 };
+
+
+module.exports.deleteKeeper = ({params: {id}}, res, next) => {
+  console.log("deleteKeeper function ran. id: ", id)
+  Keeper.forge({id})
+  .destroy()
+  .then( (keeper) => {
+    res.status(202).json(keeper)
+  })
+  .catch( (error) => {
+    next(error)
+  });
+};
