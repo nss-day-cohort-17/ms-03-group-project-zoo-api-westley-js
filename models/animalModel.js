@@ -27,7 +27,8 @@ const Animal = bookshelf.Model.extend({
     .catch( (err) => {
       return err
     })
-  }
-})
+  },
+  dependents: ['keeper']
+});
 
-module.exports = bookshelf.model('Animal', Animal)
+module.exports = bookshelf.model('Animal', Animal);
