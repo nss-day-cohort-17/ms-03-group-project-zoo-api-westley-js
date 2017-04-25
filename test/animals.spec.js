@@ -42,6 +42,7 @@ describe('Animal routes', () => {
         res.body[0].animal_image.should.equal('http://vignette2.wikia.nocookie.net/dino/images/5/52/Paluxysaurus.jpg/revision/latest?cb=20110816080846')
       })
     })
+  })
 
   describe('GET one animal', () => {
     it('should get one animal', () => {
