@@ -15,3 +15,14 @@ module.exports.getKeepers = (req, res, next) => {
     next(error);
   })
 };
+
+
+module.exports.getKeeper = ({params: {id}}, res, next) => {
+  Keeper.getSingleKeeper(id)
+  .then( (keeper) => {
+    res.status(200).json(keeper);
+  })
+  .catch( (error) => {
+    next(error);
+  })
+};

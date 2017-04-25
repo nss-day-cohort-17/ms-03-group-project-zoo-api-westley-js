@@ -11,11 +11,23 @@ const Keeper = bookshelf.Model.extend({
     return this.forge()
     .fetchAll()
     .then( (rows) => {
-      console.log("the rows", rows.toJSON())
+      // console.log("the rows", rows.toJSON())
       return rows
     })
     .catch( (error) => {
       return error
+    });
+  },
+
+  getSingleKeeper: function (id) {
+    console.log('Get single keeper called from Keeper modle')
+    return this.forge({id})
+    .fetch()
+    .then( (keeper) => {
+      return keeper;
+    })
+    .catch( (error) => {
+      return error;
     });
   }
 
