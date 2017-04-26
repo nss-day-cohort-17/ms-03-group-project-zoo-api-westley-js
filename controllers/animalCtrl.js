@@ -29,7 +29,7 @@ module.exports.addAnimal = ({body}, res, next) => {
   Animal.forge(body)
   .save()
   .then( () => {
-    res.status(201).json({"msg": 'Animal successfully added. '})
+    res.status(201).json({"msg": 'Animal successfully added.'})
   })
   .catch( (err) => {
     next(err)
@@ -44,5 +44,16 @@ module.exports.deleteAnimal = ({params: {id}}, res, next) => {
   })
   .catch( (err) => {
     next(err)
+  })
+};
+
+module.exports.updateAnimals = ({params, body}, res, next) => {
+  Animal.forge({id: params.id})
+  .save(body, {patch: true})
+  .then( () => {
+    res.status(200).json({"msg": 'Keeper has been updated'})
+  })
+  .catch( (error) => {
+    next(error);
   })
 };

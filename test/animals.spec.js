@@ -117,4 +117,30 @@
 //     })
 //   })
 
+//
+//   describe('PUT  /api/v1/animals/:id', () => {
+//       it('should modify an existing animal that exists in the animal table', () => {
+//         return chai.request(server)
+//         .put('/api/v1/animals/1')
+//         .send({
+//           name: 'Michael',
+//           species: 'Ternosaur',
+//           age: '193 ? million : years',
+//           gender: 'male',
+//           category_id: 3,
+//           number_of_kills: 0,
+//           animal_image: 'https://manyworldstheory.files.wordpress.com/2014/09/barney-the-dinosaur-creator-malibu-shooting-by-son.jpg'
+//         })
+//         .then( (res) => {
+//           res.should.have.status(200);
+//           res.should.be.json;
+//           res.should.be.a('object');
+//         });
+//       });
+//     });
+//
+//
+
+
+
 // })
