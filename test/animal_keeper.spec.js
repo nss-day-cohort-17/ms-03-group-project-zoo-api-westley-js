@@ -30,16 +30,26 @@ describe('Animal_Keeper routes', () => {
     })
   })
 
-  describe('GET /api/v1/animal_keeper/:id', () => {
-    it('should get one animal keeper', () => {
+  describe('GET /api/v1/animals/keepers/:id', () => {
+    it('should get the keeper for an animal', () => {
       return chai.request(server)
-      .get('/api/v1/animal_keeper/1')
+      .get('/api/v1/animals/keepers/1')
       .then( (res) => {
         res.should.be.json
         res.should.have.status(200)
         res.body.should.be.a('object')
         res.body.should.have.property('animal_id')
         res.body.should.have.property('keeper_id')
+      })
+    })
+  })
+
+  describe('GET /api/v1/keepers/animals/:id', () => {
+    it('should get the animals assigned to a keeper', () => {
+      return chai.request(server)
+      .get('/api/v1/keepers/animals/1')
+      .then( (res) => {
+        console.log(res.body)
       })
     })
   })
