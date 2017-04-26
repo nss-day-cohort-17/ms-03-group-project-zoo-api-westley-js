@@ -1,7 +1,7 @@
 'use strict';
 
 const { bookshelf } = require('../db/database');
-const Animal = require('../models/animalModel.js');
+const Animal = require('../models/animalModel');
 const Animal_Keeper = require('../models/animal_keeperModel');
 
 
