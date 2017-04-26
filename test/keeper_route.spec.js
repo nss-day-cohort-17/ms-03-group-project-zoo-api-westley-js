@@ -1,12 +1,12 @@
 // process.env.NODE_ENV = 'test';
-//
+
 // const chai = require('chai');
 // const should = chai.should();
 // const chaiHttp = require('chai-http');
 // const server = require('../app');
 // const { knex } = require('../db/database');
 // chai.use(chaiHttp);
-//
+
 // describe('Show keeper routes', () => {
 //
 //   beforeEach( () => {
@@ -18,7 +18,7 @@
 //       return knex.seed.run()
 //     });
 //   });
-//
+
 //   describe('Get all keepers', () => {
 //     it('should get all keepers', () => {
 //       return chai.request(server)
@@ -28,7 +28,7 @@
 //       });
 //     });
 //   });
-//
+
 //   describe('GET  /api/v1/keepers/:id', () => {
 //     it('should return a single keeper by id', () => {
 //       return chai.request(server)
@@ -39,6 +39,7 @@
 //         res.body.should.be.a('object');
 //         res.body.should.have.property('first_name');
 //         res.body.first_name.should.equal('John');
+
 //
 //       });
 //     });
@@ -64,7 +65,7 @@
 //       });
 //     });
 //   });
-//
+
 //   describe('DELETE  /api/v1/keeper/:id', () => {
 //     it('should remove a single keeper from the keeper table', () => {
 //       return chai.request(server)
@@ -73,6 +74,7 @@
 //         res.should.have.status(202);
 //         res.should.be.json;
 //         res.body.should.be.a('object');
+
 //
 //         // Must delete from animal-keeper pivot table first
 //
@@ -86,7 +88,7 @@
 //       });
 //     });
 //   });;
-//
+
 //   describe('PUT  /api/v1/keeper/:id', () => {
 //     it('should modify an existing keeper that exists in the keeper table', () => {
 //       return chai.request(server)
@@ -107,5 +109,5 @@
 //       });
 //     });
 //   });
-//
+
 // });

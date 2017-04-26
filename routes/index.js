@@ -6,7 +6,8 @@ const router = Router();
 
 router.use(require('./keepers'));
 router.use(require('./animals'));
-router.use(require('./animal_keeper'))
+router.use(require('./categories'));
+router.use(require('./animal_keeper'));
 
 router.get('/', function (req, res) {
   res.json({
