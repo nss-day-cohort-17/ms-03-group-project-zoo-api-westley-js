@@ -46,3 +46,14 @@ module.exports.deleteAnimal = ({params: {id}}, res, next) => {
     next(err)
   })
 };
+
+module.exports.updateAnimals = ({params, body}, res, next) => {
+  Animal.forge({id: params.id})
+  .save(body, {patch: true})
+  .then( () => {
+    res.status(200).json({"msg": 'Keeper has been updated'})
+  })
+  .catch( (error) => {
+    next(error);
+  })
+};
