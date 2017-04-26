@@ -33,9 +33,30 @@ module.exports.getKeeperForAnimal = ({params: {id}}, res, next) => {
 };
 
 module.exports.getAnimalsForKeeper = ({params: {id}}, res, next) => {
+  let animalArr = []
   Animal_Keeper.getAnimal(id)
   .then( (ak) => {
-    res.status(200).json(ak)
+    // console.log("ak", ak.toJSON())
+    return ak.toJSON()
+    // res.status(200).json(ak)
+  })
+  .then( (animals) => {
+    // console.log('animals', animals)
+    animals.map( (x) => {
+      // console.log('x', x.animal_id)
+      // console.log(animalArr)
+      Animal.getOneAnimal(x.animal_id)
+      .then((data) => {
+        return data.toJSON()
+      })
+      .then( (dataFormatted) => {
+        animalArr.push(dataFormatted)
+        // console.log(animalArr)
+      })
+    })
+  })
+  .then( () => {
+    console.log(animalArr)
   })
   .catch( (err) => {
     next(err)
