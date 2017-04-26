@@ -23,6 +23,17 @@ module.exports.getKeeperForAnimal = ({params: {id}}, res, next) => {
   })
 };
 
+module.exports.getAnimalsForKeeper = ({params: {id}}, res, next) => {
+  Animal_Keeper.getAnimal(id)
+  .then( (ak) => {
+    res.status(200).json(ak)
+  })
+  .catch( (err) => {
+    next(err)
+  })
+};
+
+
 module.exports.addAnimal_Keeper = ({body}, res, next) => {
   Animal_Keeper.forge(body)
   .save()
