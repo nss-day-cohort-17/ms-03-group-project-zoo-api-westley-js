@@ -29,7 +29,7 @@ module.exports.addAnimal = ({body}, res, next) => {
   Animal.forge(body)
   .save()
   .then( () => {
-    res.status(201).json({"msg": 'Animal successfully added. '})
+    res.status(201).json({"msg": 'Animal successfully added.'})
   })
   .catch( (err) => {
     next(err)
