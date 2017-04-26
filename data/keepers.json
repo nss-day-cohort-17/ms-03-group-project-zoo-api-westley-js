@@ -1,68 +1,62 @@
 [
     {
-        "id": 1,
         "first_name": "John",
         "last_name": "Hammond",
         "gender": "Male",
         "age": "68",
         "date_of_hire": "1/1/1996",
         "speciality": "Excentric Billionaire",
-        "pic_url": "https://pbs.twimg.com/profile_images/533995651298643968/fmZ3aSrt.jpeg"
+        "keeper_image": "https://pbs.twimg.com/profile_images/533995651298643968/fmZ3aSrt.jpeg"
     },
 
     {
-        "id": 2,
         "first_name": "Dennis",
         "last_name": "Nedry",
         "gender": "Male",
         "age": "39",
         "date_of_hire": "1/1/1996",
         "speciality": "Computer Programmer",
-        "pic_url": "http://i.imgur.com/IiH1j9K.jpg"
+        "keeper_image": "http://i.imgur.com/IiH1j9K.jpg"
     },
 
     {
-        "id": 3,
         "first_name": "Alan",
         "last_name": "Grant",
         "gender": "Male",
         "age": "41",
         "date_of_hire": "1/1/1996",
         "speciality": "Paleontologist",
-        "pic_url": "https://s-media-cache-ak0.pinimg.com/originals/bd/61/12/bd6112e4e7bce268f76809f3ac2e5eb9.png"
+        "keeper_image": "https://s-media-cache-ak0.pinimg.com/originals/bd/61/12/bd6112e4e7bce268f76809f3ac2e5eb9.png"
     },
 
     {
-        "id": 4,
         "first_name": "Ian",
         "last_name": "Malcolm",
         "gender": "Male",
         "age": "38",
         "date_of_hire": "1/1/1996",
         "speciality": "Chaos Theory",
-        "pic_url": "https://img.buzzfeed.com/buzzfeed-static/static/2015-06/4/16/enhanced/webdr11/enhanced-10716-1433451314-11.jpg"
+        "keeper_image": "https://img.buzzfeed.com/buzzfeed-static/static/2015-06/4/16/enhanced/webdr11/enhanced-10716-1433451314-11.jpg"
     },
 
     {
-        "id": 5,
         "first_name": "Owen",
         "last_name": "Grady",
         "gender": "Male",
         "age": "28",
         "date_of_hire": "1/1/1996",
         "speciality": "Velociraptor",
-        "pic_url": "https://vignette3.wikia.nocookie.net/jurassicpark/images/2/2d/Owen.jpg/revision/latest?cb=20140920040623"
+        "keeper_image": "https://vignette3.wikia.nocookie.net/jurassicpark/images/2/2d/Owen.jpg/revision/latest?cb=20140920040623"
     },
 
     {
-        "id": 6,
         "first_name": "Ellie",
         "last_name": "Sattler",
         "gender": "Male",
         "age": "23",
         "date_of_hire": "1/1/1996",
         "speciality": "Paleobotanist",
-        "pic_url": "http://vignette2.wikia.nocookie.net/jurassicpark/images/7/7e/4785641918_d408b00faa.jpg/revision/latest?cb=20110802042202"
+        "keeper_image": "http://vignette2.wikia.nocookie.net/jurassicpark/images/7/7e/4785641918_d408b00faa.jpg/revision/latest?cb=20110802042202"
     }
 
 ]
