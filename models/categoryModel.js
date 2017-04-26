@@ -9,7 +9,6 @@ const Category = bookshelf.Model.extend({
   animal: function() { return this.belongsToMany('Animal').through('Animal')}
 }, {
   getAll: function () {
-    console.log("getAll category function called in category model")
     return this.forge()
     .fetchAll()
     .then( (rows) => {

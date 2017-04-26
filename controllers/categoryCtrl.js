@@ -5,7 +5,6 @@ const Category = require('../models/categoryModel');
 
 
 module.exports.getCategories = (req, res, next) => {
-  console.log("getCategories function called in category controller")
   Category.getAll()
   .then( (categories) => {
     res.status(200).json(categories)
@@ -17,8 +16,6 @@ module.exports.getCategories = (req, res, next) => {
 
 
 module.exports.getCategory = ({params: {id}}, res, next) => {
-  console.log("getCategories function called in category controller")
-  console.log("id", id)
   Category.getSingleCategory(id)
   .then( (category) => {
     res.status(200).json(category)
