@@ -8,7 +8,7 @@
 // chai.use(chaiHttp);
 
 // describe('Show keeper routes', () => {
-
+//
 //   beforeEach( () => {
 //     return knex.migrate.rollback()
 //     .then( () => {
@@ -40,10 +40,11 @@
 //         res.body.should.have.property('first_name');
 //         res.body.first_name.should.equal('John');
 
+//
 //       });
 //     });
 //   });
-
+//
 //   describe('POST  /api/v1/keeper/new', () => {
 //     it('should add a new keeper to the keeper table', () => {
 //       return chai.request(server)
@@ -74,8 +75,9 @@
 //         res.should.be.json;
 //         res.body.should.be.a('object');
 
+//
 //         // Must delete from animal-keeper pivot table first
-
+//
 //         // chai.request(server)
 //         // .get('/api/v1/keepers')
 //         // .then( (res) => {

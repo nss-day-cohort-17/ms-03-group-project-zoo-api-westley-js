@@ -9,7 +9,7 @@ router.get('/animals', getAnimals);
 router.get('/animals/:id', getAnimal);
 router.post('/animals/new', addAnimal);
 router.delete('/animals/:id', deleteAnimal);
-router.put('/animals/:id', updateAnimals)
+router.put('/animals/:id', updateAnimals);
 
 
 module.exports = router;
