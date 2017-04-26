@@ -7,6 +7,9 @@
     "start": "nodemon app.js",
     "test": "nodemon --exec \"mocha --recursive\" -R list"
   },
+  "engines": {
+    "node": "7.3.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nss-day-cohort-17/ms-03-group-project-zoo-api-westley-js.git"
