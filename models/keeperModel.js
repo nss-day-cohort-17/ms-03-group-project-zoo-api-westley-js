@@ -18,7 +18,7 @@ const Keeper = bookshelf.Model.extend({
     })
     .catch( (error) => {
       return error
-    });
+    })
   },
 
   getSingleKeeper: function (id) {
@@ -30,10 +30,11 @@ const Keeper = bookshelf.Model.extend({
     })
     .catch( (error) => {
       return error;
-    });
-  }
+    })
+  },
+
+  dependents: ['animal']
 
 });
-
 
 module.exports = bookshelf.model('Keeper', Keeper);

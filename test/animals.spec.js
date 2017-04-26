@@ -1,12 +1,12 @@
 // process.env.NODE_ENV = 'test'
-//
+
 // const chai = require('chai')
 // const should = chai.should()
 // const chaiHttp = require('chai-http')
 // const server = require('../app')
 // const { knex } = require('../db/database')
 // chai.use(chaiHttp)
-//
+
 // describe('Animal routes', () => {
 //   beforeEach( () => {
 //     return knex.migrate.rollback()
@@ -17,7 +17,7 @@
 //         return knex.seed.run()
 //       })
 //   })
-//
+
 //   describe('Get all animals', () => {
 //     it('should get all the animals', () => {
 //       return chai.request(server)
@@ -43,7 +43,7 @@
 //       })
 //     })
 //   })
-//
+
 //   describe('GET one animal', () => {
 //     it('should get one animal', () => {
 //       return chai.request(server)
@@ -69,7 +69,7 @@
 //       })
 //     })
 //   })
-//
+
 //   describe('POST one animal', () => {
 //     it('should add a new animal to the db', () => {
 //       return chai.request(server)
@@ -90,7 +90,7 @@
 //       })
 //     })
 //   })
-//
+
 //   describe('DELETE one animal', () => {
 //     it('should delete an animal from the database', () => {
 //       return chai.request(server)
@@ -116,6 +116,7 @@
 //       })
 //     })
 //   })
+
 //
 //   describe('PUT  /api/v1/animals/:id', () => {
 //       it('should modify an existing animal that exists in the animal table', () => {
@@ -139,4 +140,7 @@
 //     });
 //
 //
+
+
+
 // })
