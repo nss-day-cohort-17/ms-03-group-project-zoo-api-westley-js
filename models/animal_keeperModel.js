@@ -17,9 +17,19 @@ const Animal_Keeper = bookshelf.Model.extend({
       return err
     })
   },
-  getOne: function(id) {
-    return this.forge({id})
+  getKeeper: function(id) {
+    return this.where({animal_id: id})
     .fetch()
+    .then( (ak) => {
+      return ak
+    })
+    .catch( (err) => {
+      return err
+    })
+  },
+  getAnimal: function(id) {
+    return this.where({keeper_id: id})
+    .fetchAll()
     .then( (ak) => {
       return ak
     })
