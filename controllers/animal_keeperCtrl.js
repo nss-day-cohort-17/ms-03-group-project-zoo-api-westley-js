@@ -17,7 +17,14 @@ module.exports.getAnimal_Keepers = (req, res, next) => {
 module.exports.getKeeperForAnimal = ({params: {id}}, res, next) => {
   Animal_Keeper.getKeeper(id)
   .then( (ak) => {
-    res.status(200).json(ak)
+    console.log('ak.')
+    return ak.toJSON().keeper_id
+  })
+  .then( (keeper) => {
+    Keeper.getSingleKeeper(keeper)
+    .then( (data) => {
+      res.status(200).json(data)
+    })
   })
   .catch( (err) => {
     next(err)
