@@ -13,8 +13,8 @@ module.exports.getAnimal_Keepers = (req, res, next) => {
   })
 };
 
-module.exports.getAnimal_Keeper = ({params: {id}}, res, next) => {
-  Animal_Keeper.getOne(id)
+module.exports.getKeeperForAnimal = ({params: {id}}, res, next) => {
+  Animal_Keeper.getKeeper(id)
   .then( (ak) => {
     res.status(200).json(ak)
   })
