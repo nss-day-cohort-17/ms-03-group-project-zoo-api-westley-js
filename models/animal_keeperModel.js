@@ -26,6 +26,16 @@ const Animal_Keeper = bookshelf.Model.extend({
     .catch( (err) => {
       return err
     })
+  },
+  getAnimal: function(id) {
+    return this.where({keeper_id: id})
+    .fetchAll()
+    .then( (ak) => {
+      return ak
+    })
+    .catch( (err) => {
+      return err
+    })
   }
 });
 
