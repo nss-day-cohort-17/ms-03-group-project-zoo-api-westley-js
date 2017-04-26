@@ -1,7 +1,7 @@
 'use strict';
 
 const { bookshelf } = require('../db/database');
-const Animal = require('../models/animalModel.js');
+const Animal = require('../models/animalModel');
 const Animal_Keeper = require('../models/animal_keeperModel');
 
 
@@ -51,9 +51,9 @@ module.exports.updateAnimals = ({params, body}, res, next) => {
   Animal.forge({id: params.id})
   .save(body, {patch: true})
   .then( () => {
-    res.status(200).json({"msg": 'Keeper has been updated'})
+    res.status(200).json({"msg": 'Animal has been updated'})
   })
-  .catch( (error) => {
-    next(error);
+  .catch( (err) => {
+    next(err);
   })
 };

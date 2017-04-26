@@ -9,11 +9,9 @@ const Keeper = bookshelf.Model.extend({
   animal: function() { return this.belongsToMany('Animal').through('Animal_Keeper')}
 }, {
   getAll: function () {
-    // console.log('Get all called from Keeper model')
     return this.forge()
     .fetchAll()
     .then( (rows) => {
-      // console.log("the rows", rows.toJSON())
       return rows
     })
     .catch( (error) => {
@@ -22,7 +20,6 @@ const Keeper = bookshelf.Model.extend({
   },
 
   getSingleKeeper: function (id) {
-    console.log('Get single keeper called from Keeper modle')
     return this.forge({id})
     .fetch()
     .then( (keeper) => {
