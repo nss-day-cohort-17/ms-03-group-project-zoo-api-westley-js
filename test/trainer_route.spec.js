@@ -66,4 +66,18 @@ describe('Show trainer routes', () => {
     });
   });
 
+
+
+    describe('DELETE  /api/v1/trainer/:id', () => {
+    it('should remove a single trainer from the trainer table', () => {
+      return chai.request(server)
+      .delete('/api/v1/trainers/1')
+      .then( (res) => {
+        res.should.have.status(202);
+        res.should.be.json;
+        res.body.should.be.a('object');
+      });
+    });
+  });;
+
 })

@@ -31,3 +31,14 @@ module.exports.addTrainer = ({body}, res, next ) => {
     next(error);
   })
 };
+
+module.exports.deleteTrainer = ({params: {id}}, res, next) => {
+  Trainer.forge({id})
+  .destroy()
+  .then( (trainer) => {
+    res.status(202).json(trainer);
+  })
+  .catch( (error) => {
+    next(error);
+  });
+};
