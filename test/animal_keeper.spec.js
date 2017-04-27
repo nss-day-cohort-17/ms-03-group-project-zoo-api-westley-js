@@ -30,29 +30,32 @@ describe('Animal_Keeper routes', () => {
   //   })
   // })
 
-  describe('GET /api/v1/animals/keepers/:id', () => {
-    it('should get the keeper for an animal', () => {
-      return chai.request(server)
-      .get('/api/v1/animals/keepers/1')
-      .then( (res) => {
-        res.should.be.json
-        res.should.have.status(200)
-        res.body.should.be.a('object')
-        res.body.should.have.property('first_name')
-        res.body.should.have.property('last_name')
-      })
-    })
-  })
-  //
-  // describe('GET /api/v1/keepers/animals/:id', () => {
-  //   it('should get the animals assigned to a keeper', () => {
+  // describe('GET /api/v1/animals/keepers/:id', () => {
+  //   it('should get the keeper for an animal', () => {
   //     return chai.request(server)
-  //     .get('/api/v1/keepers/animals/1')
+  //     .get('/api/v1/animals/keepers/1')
   //     .then( (res) => {
-  //       console.log(res.body)
+  //       res.should.be.json
+  //       res.should.have.status(200)
+  //       res.body.should.be.a('object')
+  //       res.body.should.have.property('first_name')
+  //       res.body.should.have.property('last_name')
   //     })
   //   })
   // })
+  //
+  describe('GET /api/v1/keepers/animals/:id', () => {
+    it('should get the animals assigned to a keeper', () => {
+      return chai.request(server)
+      .get('/api/v1/keepers/animals/1')
+      .then( (res) => {
+        console.log('res.body', res.body)
+        res.should.be.json
+        res.should.have.status(200)
+        res.body.should.be.a('array')
+      })
+    })
+  })
   //
   // describe('POST /api/v1/animal_keeper/new', () => {
   //   it('should add a new animal_keeper to the db', () => {
