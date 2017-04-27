@@ -17,7 +17,6 @@ module.exports.getAnimal_Keepers = (req, res, next) => {
 module.exports.getKeeperForAnimal = ({params: {id}}, res, next) => {
   Animal_Keeper.getKeeper(id)
   .then( (ak) => {
-    console.log('ak.')
     return ak.toJSON().keeper_id
   })
   .then( (keeper) => {
