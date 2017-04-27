@@ -33,8 +33,8 @@ module.exports.getKeeperForAnimal = ({params: {id}}, res, next) => {
 module.exports.getAnimalsForKeeper = ({params: {id}}, res, next) => {
   Keeper.forge({id})
   .fetch({withRelated: ['animal'], require: true})
-  .then((whatever) => {
-    return res.status(200).json(whatever.toJSON().animal)
+  .then((animals) => {
+    return res.status(200).json(animals.toJSON().animal)
   })
 };
 
