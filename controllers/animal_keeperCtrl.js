@@ -17,7 +17,6 @@ module.exports.getAnimal_Keepers = (req, res, next) => {
 module.exports.getKeeperForAnimal = ({params: {id}}, res, next) => {
   Animal_Keeper.getKeeper(id)
   .then( (ak) => {
-    console.log('ak.')
     return ak.toJSON().keeper_id
   })
   .then( (keeper) => {
@@ -32,12 +31,10 @@ module.exports.getKeeperForAnimal = ({params: {id}}, res, next) => {
 };
 
 module.exports.getAnimalsForKeeper = ({params: {id}}, res, next) => {
-  Animal_Keeper.getAnimal(id)
-  .then( (ak) => {
-    res.status(200).json(ak)
-  })
-  .catch( (err) => {
-    next(err)
+  Keeper.forge({id})
+  .fetch({withRelated: ['animal'], require: true})
+  .then((animals) => {
+    return res.status(200).json(animals.toJSON().animal)
   })
 };
 

@@ -1,3 +1,4 @@
+//actually the categories migration
 exports.up = function(knex, Promise) {
   return knex.schema.table('categories', function(table){
     table.string('name').notNullable();
