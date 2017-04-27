@@ -31,12 +31,10 @@ module.exports.getKeeperForAnimal = ({params: {id}}, res, next) => {
 };
 
 module.exports.getAnimalsForKeeper = ({params: {id}}, res, next) => {
-  Animal_Keeper.getAnimal(id)
-  .then( (ak) => {
-    res.status(200).json(ak)
-  })
-  .catch( (err) => {
-    next(err)
+  Keeper.forge({id})
+  .fetch({withRelated: ['animal'], require: true})
+  .then((whatever) => {
+    return res.status(200).json(whatever.toJSON().animal)
   })
 };
 
