@@ -1,3 +1,5 @@
+//actually the migration to run all the tables in order
+
 exports.up = function(knex, Promise) {
   return knex.schema.createTableIfNotExists('categories', (table) => {
     table.increments()
@@ -11,6 +13,12 @@ exports.up = function(knex, Promise) {
   .createTableIfNotExists('animal_keeper', (table) => {
     table.increments()
   })
+  .createTableIfNotExists('categories', (table) => {
+    table.increments()
+  })
+  .createTableIfNotExists('trainers', (table) => {
+    table.increments()
+  })
 };
 
-exports.down = (knex, Promise) => knex.schema.dropTableIfExists('animal_keeper').dropTableIfExists('keepers').dropTableIfExists('animals').dropTableIfExists('categories')
+exports.down = (knex, Promise) => knex.schema.dropTableIfExists('animal_keeper').dropTableIfExists('keepers').dropTableIfExists('trainers').dropTableIfExists('animals').dropTableIfExists('categories')
