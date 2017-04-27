@@ -2,6 +2,7 @@
 
 const { bookshelf } = require('../db/database');
 const Animal_Keeper = require('../models/animal_keeperModel');
+const Keeper = require('../models/keeperModel');
 
 module.exports.getAnimal_Keepers = (req, res, next) => {
   Animal_Keeper.getAll()
@@ -16,7 +17,13 @@ module.exports.getAnimal_Keepers = (req, res, next) => {
 module.exports.getKeeperForAnimal = ({params: {id}}, res, next) => {
   Animal_Keeper.getKeeper(id)
   .then( (ak) => {
-    res.status(200).json(ak)
+    return ak.toJSON().keeper_id
+  })
+  .then( (keeper) => {
+    Keeper.getSingleKeeper(keeper)
+    .then( (data) => {
+      res.status(200).json(data)
+    })
   })
   .catch( (err) => {
     next(err)
@@ -24,12 +31,10 @@ module.exports.getKeeperForAnimal = ({params: {id}}, res, next) => {
 };
 
 module.exports.getAnimalsForKeeper = ({params: {id}}, res, next) => {
-  Animal_Keeper.getAnimal(id)
-  .then( (ak) => {
-    res.status(200).json(ak)
-  })
-  .catch( (err) => {
-    next(err)
+  Keeper.forge({id})
+  .fetch({withRelated: ['animal'], require: true})
+  .then((whatever) => {
+    return res.status(200).json(whatever.toJSON().animal)
   })
 };
 

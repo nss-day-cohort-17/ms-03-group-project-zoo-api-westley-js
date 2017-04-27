@@ -30,10 +30,8 @@ module.exports = {
   },
 
   production: {
-    client: 'postgresql',
-    connection: {
-      database: 'dino_zoo',
-    },
+    client: 'pg',
+    connection: process.env.DATABASE_URL,
     migrations: {
       directory: __dirname + '/db/migrations'
     },
