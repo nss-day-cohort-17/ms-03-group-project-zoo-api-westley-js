@@ -19,6 +19,9 @@ exports.up = function(knex, Promise) {
   .createTableIfNotExists('trainers', (table) => {
     table.increments()
   })
+  .createTableIfNotExists('tricks', (table) => {
+    table.increments()
+  })
 };
 
-exports.down = (knex, Promise) => knex.schema.dropTableIfExists('animal_keeper').dropTableIfExists('keepers').dropTableIfExists('trainers').dropTableIfExists('animals').dropTableIfExists('categories')
+exports.down = (knex, Promise) => knex.schema.dropTableIfExists('animal_keeper').dropTableIfExists('tricks').dropTableIfExists('keepers').dropTableIfExists('trainers').dropTableIfExists('animals').dropTableIfExists('categories')
