@@ -29,4 +29,19 @@ describe('Show trainer routes', () => {
       })
     })
   })
+
+  describe('Get /api/v1/trainers/:id', () => {
+    it('should get one trainer with that id', () => {
+      return chai.request(server)
+      .get('/api/v1/trainers/1')
+      .then((res) => {
+        res.should.have.status(200);
+        res.should.be.json;
+        res.body.should.be.a('object');
+        res.body.should.have.property('first_name');
+        res.body.first_name.should.equal('Augy');
+      })
+    })
+  })
+
 })

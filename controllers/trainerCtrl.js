@@ -12,3 +12,13 @@ module.exports.getTrainers = (req, res, next) => {
     next(error)
   })
 };
+
+module.exports.getTrainer = ({params: {id}}, res, next) => {
+  Trainer.getSingleTrainer(id)
+  .then((trainer) => {
+    res.status(200).json(trainer)
+  })
+  .catch((error) => {
+    next(error)
+  })
+}
