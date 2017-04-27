@@ -44,4 +44,26 @@ describe('Show trainer routes', () => {
     })
   })
 
+
+  describe('POST  /api/v1/trainers/new', () => {
+    it('should add a new trainer to the trainer table', () => {
+      return chai.request(server)
+      .post('/api/v1/trainers/new')
+      .send({
+        "first_name": "Sorrel",
+        "last_name": "Brigman",
+        "gender": "Female",
+        "age": "33",
+        "date_of_hire": "1/1/1996",
+        "category_id": "3",
+        "trainer_image": "http://i.imgur.com/V4pda.jpg"
+      })
+      .then( (res) => {
+        res.should.have.status(201)
+        res.should.be.json
+        res.should.be.a('object')
+      });
+    });
+  });
+
 })

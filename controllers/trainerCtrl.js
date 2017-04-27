@@ -22,3 +22,12 @@ module.exports.getTrainer = ({params: {id}}, res, next) => {
     next(error)
   })
 }
+
+module.exports.addTrainer = ({body}, res, next ) => {
+  Trainer.forge(body)
+  .save()
+  .then( () => res.status(201).json("msg: New trainer successfully added"))
+  .catch( (error) => {
+    next(error);
+  })
+};
