@@ -40,5 +40,14 @@ module.exports.deleteTrainer = ({params: {id}}, res, next) => {
   })
   .catch( (error) => {
     next(error);
-  });
+  })
+};
+
+module.exports.updateTrainer = ({params, body}, res, next) => {
+  Trainer.forge({id: params.id})
+  .save(body, {patch: true})
+  .then( () => res.status(200).json("msg: Trainer has been updated"))
+  .catch( (error) => {
+    next(error);
+  })
 };
